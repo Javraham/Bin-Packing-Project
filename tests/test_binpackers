@@ -1,0 +1,20 @@
+from macpacking.algorithms.online import NextFit, BestFit, WorstFit, FirstFit, RefinedFirstFit
+
+def test_next_fit_online():
+    test_capacity = 10
+    test_weights = iter([1,2,3,4,5,6])
+
+    assert NextFit()._process(test_capacity, test_weights) == [[1,2,3,4],[5],[6]]
+
+def test_first_fit_online():
+    test_capacity = 10
+    test_weights = iter([3, 8, 4, 2, 2])
+
+    assert FirstFit()._process(test_capacity, test_weights) == [[3, 4, 4],[8, 2]]
+
+test_next_fit_online()
+test_first_fit_online()
+print("All Tests Passed")
+
+#cd "Lab 2 - Bin Packing\l2-bin-packing"
+#python -m tests.test_reader
